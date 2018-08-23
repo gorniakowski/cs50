@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock price
+{% endblock %}
+
+{% block main %}
+You sold {{name}} for {{usd(price)}} ,number of shares sold: {{shares}}. The value is {{usd(value)}}. Cash remaining {{usd(cash)}}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+   <table  class="table table-striped">
+     <tr>
+    <th>NAME</th>
+    <th>AMOUNT</th>
+    <th>PRICE</th>
+    <th>TYPE</th>
+    <th>DATE</th>
+  </tr>
+  {%for stock in transactions%}
+  <tr>
+      <td>{{stock["name"]}}</td><td>{{stock["amount"]}}</td><td>{{stock["price"]}}</td><td>{{stock["transaction_type"]}}</td><td>{{stock["date"]}}</td>
+  </tr>
+
+  {%endfor %}
+  </table>
+{% endblock %}

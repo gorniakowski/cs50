@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    INDEX
+{% endblock %}
+
+{% block main %}
+   <table  class="table table-striped">
+     <tr>
+    <th>NAME</th>
+    <th>AMOUNT</th>
+    <th>PRICE</th>
+    <th>VALUE</th>
+  </tr>
+  {%for stock in user_stocks%}
+  <tr>
+      <td>{{stock["name"]}}</td><td>{{stock["sum(amount)"]}}</td><td>{{usd(stock["price"])}}</td><td>{{usd(stock["value"])}}</td>
+  </tr>
+
+  {%endfor %}
+  <tr>
+      <td>Cash</td><td></td><td></td><td>{{usd(user_cash)}}</td>
+  </tr>
+  <tr>
+      <td></td><td></td><td></td><td><b>{{usd(grand_total)}}</b></td>
+  </tr>
+  </table>
+{% endblock %}
